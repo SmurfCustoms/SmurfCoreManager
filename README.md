@@ -1,165 +1,132 @@
-# 🚓 CripCore Manager
+# SmurfCore
 
-A modern manager for **Grand Theft Auto V + LSPDFR** to safely manage mods, plugins, scripts, and profiles.
+A manager for **GTA V Legacy** and **LSPDFR**, by [Smurf Customs](https://smurfcustoms.co.uk).
 
----
+One GTA install, three setups: **Game Build 1**, **Game Build 2**, and **Dev**. SmurfCore swaps only the folders and files you assign. Anything left in the game stays in the game.
 
-## ✨ Features
-
-### 🔁 Profile Switching
-- Instantly switch between:
-  - Game Build 1 setup  
-  - Game Build 2 setup  
-  - Game Build Dev setup  
-- Keeps all mod setups completely separate  
-- Uses fast folder linking (no manual copying)
+**Version 2.0.0** · Windows 10/11 · GTA V Legacy only
 
 ---
 
-### 🧩 Plugin & Script Management
-- Enable / Disable plugins and scripts with one click  
-- No need to manually rename `.dll` or `.asi` files  
-- Visual status:
-  - 🟢 Enabled  
-  - 🔴 Disabled  
+## Features
+
+### Profiles
+- Game Build 1, Game Build 2, and Dev in one GTA folder
+- Switching stays locked until you save a folder map
+- Assign a whole folder, a single file, or only some files inside a folder
+- **Leave in game** is the default. Those folders and files are never swapped
+- Rename the three builds in Settings. The names are labels only
+
+### Scripts and plugins
+- Toggle LSPDFR plugins, Rage plugins, scripts, and ASI mods
+- A toggle renames the file so the game skips it. The file stays on disk
+- The page lists plugin conflicts and missing dependencies
+
+### Launch
+- **Story mode** starts GTA V
+- **RagePluginHook** starts the game through RPH
+- **Safe mode** turns the `mods` folder off so you can see whether a crash is coming from mods. Turn it off to put the folder back
+
+### Key codes
+Two separate lists. Click a key to copy the code for the list you are viewing.
+
+| List | What the number is |
+| --- | --- |
+| Windows | Virtual-key codes for trainers and scripts. `F6` is `117`. |
+| Stream Deck | Keyboard codes for a Stream Deck hotkey. `F6` is `16777269`. Letters and number keys match the Windows code. |
+
+Groups: Function, Letters, Numbers, Modifiers, Navigation, Symbols, and Numpad. Search works for a name or a code, such as `F6`, `117`, or `16777269`.
+
+### Backups
+Core Management always includes:
+
+- `GTA5.exe`
+- `GTAVLauncher.exe`
+- `GTAVLanguageSelect.exe`
+- `PlayGTAV.exe`
+
+You can add other files or folders from the GTA directory. Restore puts every file from that backup back. Paths outside the GTA folder are refused.
+
+### Settings
+- **Theme** — light, dark, or match Windows
+- **Background** — wallpaper, with the grid left on so text stays readable. Clear background removes it
+- **Accent** — outline, solid, or a gradient between two colours, across, down, or diagonal
+- **Sound** — a short chime when SmurfCore opens
+- **Notifications** — alerts for SmurfCore, ScriptHookV, ScriptHookVDotNet, RageNativeUI, LemonUI, and LSPDFR
 
 ---
 
-### 💾 Backup & Restore System
-- Backup critical game files:
-  - `GTA5.exe`
-  - `GTAVLauncher.exe`
-  - `GTAVLanguageSelect.exe`
-  - `PlayGTAV.exe`
-- Restore instantly if a GTA update breaks your mods  
+## Folders
 
----
+SmurfCore keeps its own folder inside the GTA V directory. Your game files stay where they are until you assign them.
 
-### 🧠 Version Detection
-- Reads directly from `versionInfo.txt`
-- Displays:
-```
-
-GTA Version: v1.0.xxxx.x
-Launcher: x.x.x.x
-
-```
-
----
-
-### 🛡️ Compatibility Check
-- Automatically checks if your setup is:
-  - ✅ Fully Compatible  
-  - ⚠️ Partial  
-  - ❌ Not Supported  
-
----
-
-### 🖥️ Modern UI
-- Clean sidebar layout  
-- Real-time status updates  
-- Simple, user-friendly design  
-
----
-
-## 📂 Required GTA Structure
-
-```
-
+```text
 GTA V/
-├── CripCore_Profiles/
-│   ├── Game Build 1/
-│   │   ├── mods/
-│   │   ├── plugins/
-│   │   ├── scripts/
-│   │   ├── ELS/
-│   │   └── lspdfr/
-│   ├── Game Build 2/
-│   │   ├── mods/
-│   │   ├── plugins/
-│   │   ├── scripts/
-│   │   ├── ELS/
-│   │   └── lspdfr/
-│   ├── Game Build Dev/
-│   │   ├── mods/
-│   │   ├── plugins/
-│   │   ├── scripts/
-│   │   ├── ELS/
-│   │   └── lspdfr/
-│   └── CripCore_Exported_Profiles/
-└── CripCore_VersionBackups/
-
+└── SmurfCore_Manager/
+    ├── SmurfCore_Profiles/
+    │   ├── Game Build 1/
+    │   │   ├── mods/
+    │   │   ├── plugins/
+    │   │   ├── scripts/
+    │   │   ├── ELS/
+    │   │   └── lspdfr/
+    │   ├── Game Build 2/
+    │   │   ├── mods/
+    │   │   ├── plugins/
+    │   │   ├── scripts/
+    │   │   ├── ELS/
+    │   │   └── lspdfr/
+    │   └── Game Build Dev/
+    │       ├── mods/
+    │       ├── plugins/
+    │       ├── scripts/
+    │       ├── ELS/
+    │       └── lspdfr/
+    └── SmurfCore_VersionBackups/
 ```
 
 ---
 
-## 🚀 How to Use
+## How to use
 
-### 🔧 Setup
-1. Run CripCore as **Administrator**
-2. The tool create's `CripCore_Profiles`
-3. Move your:
-   - `mods`
-   - `plugins`
-   - `scripts`
-   - `ELS`
-   - `lspdfr`  
-   into a profile folder (**Game Build 1** / **Game Build 2** **Game Build Dev**) located in `CripCore_Profiles`  
+### First launch
+1. Run SmurfCore as **Administrator**. Profile switching is locked. Nothing in the GTA folder is renamed or moved.
+2. Choose your GTA V folder if it is not already set.
+3. Open **Folders & files**. Assign a whole folder, a file in the GTA folder, or open a folder and pick only some of the files. The other choice is **Leave in game**.
+4. Review the list and save. Switching unlocks after that save.
 
-4. Remove them from the main GTA directory 
-Do not change profile's unless you have done all the above... If you failed to do so. Don't come at me.. Your fault you lost your files. No going back now. Start again. 
+### Switching profiles
+1. Open SmurfCore.
+2. Choose **Game Build 1**, **Game Build 2**, or **Dev**.
+3. Only the folders and files you included are exchanged. Leave in game stays where it is.
 
----
+### Plugins and scripts
+Open **Manage Scripts & Plugins** and toggle an item before you launch. Enabled files load. Disabled files are renamed so the game skips them.
 
-### 🔁 Switching Profiles
-1. Open CripCore  
-2. Click **Game Build 1** or **Game Build 2** or **Game Build Dev** 
-3. Mods and other files are swapped instantly  
+### Creating a backup
+1. Open **Core Management**.
+2. Add any extra GTA files or folders you want in the backup. The four game executables are already included.
+3. Enter a name and create the backup.
 
----
-
-### 🧩 Managing Plugins & Scripts
-- Go to **Plugins** or **Scripts** tab  
-- Click to toggle:
-  - Enabled = 🟢  
-  - Disabled = 🔴  
+### Restoring a backup
+1. Select a backup.
+2. Restore. Every file from that backup is put back.
 
 ---
 
-### 💾 Creating a Backup
-1. Enter a backup name or choose one 
-2. Click **Create Backup**  
+## Notes
+
+- Run SmurfCore as **Administrator** so it can read and swap the folders you assigned.
+- SmurfCore is for **GTA V Legacy**.
+- Leave in game is the safe choice. Those folders and files are never copied, moved, or swapped.
+- Close GTA V before you save a profile or switch builds.
+- Extra backup files have to live inside the GTA folder.
 
 ---
 
-### ♻️ Restoring a Backup
-1. Select a backup  
-2. Click restore  
-3. Game files are instantly restored  
-
----
-
-## ⚠️ Notes
-
-- Always run as **Administrator**  
-- Keep your main GTA directory clean  
-- Backups only include EXE files  
-- Recommended to disable GTA auto-updates  
-
----
-
-## 💡 Future Features
-
-- Full mod manager UI  
-- Update enhancements
-- Much more, but feel free to suggest 
-
----
-
-## 👨‍💻 Author
+## Author
 
 **Smurfy**  
-Crip Developments 🚀  
-https://discord.gg/85yyacGGEh
-
----
+[Smurf Customs](https://smurfcustoms.co.uk)  
+[Discord](https://discord.smurfcustoms.co.uk)
+```
